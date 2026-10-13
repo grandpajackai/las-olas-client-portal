@@ -29,11 +29,13 @@ Never reuse the demo password for a real account. The local API includes these k
 
 ## Public browser feedback preview
 
-The public preview is planned for GitHub Pages at `https://<account>.github.io/las-olas-client-portal/`. Deployment and URL verification are pending; do not share that placeholder as a working link. The preview uses only fictional sample accounts and records. It simulates owner, staff, and management roles in the browser and is not backed by the local Node/SQLite API or a hosted shared service.
+The live preview is at [grandpajackai.github.io/las-olas-client-portal](https://grandpajackai.github.io/las-olas-client-portal/), built from the public [GitHub repository](https://github.com/grandpajackai/las-olas-client-portal). Select a demo role on the sign-in screen; no sign-up is needed. It uses fictional sample accounts and records and simulates owner, staff, and management roles in the browser. It is not backed by the local Node/SQLite API or a hosted shared service.
 
 Preview changes are kept in that browser's local storage and are available when switching demo roles in the same browser. They are not shared with another browser, device, or visitor. Use fictional data only; clear the site's browser storage to reset a walkthrough. No email, push notification, payment, or real-world work instruction is sent. The GitHub Pages host is static HTML/CSS/JavaScript; GitHub documents that visitor IP addresses are logged for security. See [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [the feedback walkthrough](docs/FEEDBACK.md), and [the demo privacy notice](docs/PRIVACY-DEMO.md).
 
 To build the same static preview locally, run `npm run build:preview`. This sets the demo mode and `/las-olas-client-portal` base path, exports the web app into `preview-dist`, and prepares the Pages output. It does not start or require the Node API.
+
+The deployment workflow checks the build, tests, static export, public-file guard, and deployed asset checksums. A read-only monitor checks the public preview every six hours; it reports availability and does not edit or redeploy the site.
 
 ## Try the workflow
 
@@ -99,7 +101,7 @@ npx expo export --platform all --output-dir dist
 
 Verification recorded on **October 10, 2026**: `npm test` passed all **28 tests** (16 API and 12 client-state tests), TypeScript passed, Expo public configuration resolved the iOS/Android/web targets and SecureStore/ImagePicker plugins, and the final all-platform export passed. The export produced approximately 563 KB of web JavaScript and 1.7 MB Hermes bundles for each mobile platform. The offline dependency compatibility check reported up to date; it is limited to the locally available compatibility information.
 
-Current preview-phase checks on **October 13, 2026**: `npm test` passed **50 tests** (20 server, 26 client/demo, and 4 public-preview guard tests), and `npm run typecheck` passed. `npm run build:preview` produced a 619 KB static export with 14 files, and the public build guard passed. The October 10 all-platform export above is historical. The public HTTPS deployment and URL are still pending verification; see the [review record](docs/REVIEW.md).
+Current preview-phase checks on **October 13, 2026**: `npm test` passed **50 tests** (20 server, 26 client/demo, and 4 public-preview guard tests), `npm run typecheck` passed, and all-platform JavaScript exports passed (619 KB web; 1.8 MB each for iOS and Android). `npm run build:preview` produced the 619 KB static browser export, and the public build guard passed. The preview is live at [grandpajackai.github.io/las-olas-client-portal](https://grandpajackai.github.io/las-olas-client-portal/); deployment evidence and the review limits are recorded in [the review](docs/REVIEW.md).
 
 Browser checks exercised owner requests/messages and versioned approvals, staff draft editing/review, administrator publication, owner-visible published reports without internal notes, offline request capture/synchronization, linked estimate/scheduling, and vessel switching. Access and **Add a vessel** forms rendered successfully. Compact browser visual checks completed at actual **319 px and 355 px CSS widths**: the owner home and request dialog had no horizontal overflow, and the dialog remained scrollable with its close control reachable. The automated browser download-completion event timed out; scoped API downloads were tested, while browser completion and native file sharing remain unverified. See [the QA record and remaining checklist](docs/QA.md).
 

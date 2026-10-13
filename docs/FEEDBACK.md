@@ -1,12 +1,12 @@
 # Browser feedback preview
 
-**Deployment status:** awaiting a verified public preview URL. The final handoff must replace this line with the working HTTPS link and tested source/deployment reference.
+**Live preview:** [https://grandpajackai.github.io/las-olas-client-portal/](https://grandpajackai.github.io/las-olas-client-portal/). The site was deployed from commit [`7472330`](https://github.com/grandpajackai/las-olas-client-portal/commit/747233034b8900cc23e5446040fe65a12d89e2d2); [GitHub Actions run 38421081963](https://github.com/grandpajackai/las-olas-client-portal/actions/runs/38421081963) passed build, tests, export, public scan, deployment, and checks for all 14 deployed asset checksums.
 
 This preview is for reviewing the Las Olas owner, staff, and management experience. It uses fictional vessels and records. The public version is a static browser demonstration: changes stay in that browser's local storage, including when you switch between demo roles in the same browser. They are not shared with another browser, device, or visitor. Clear the site's browser storage to reset the walkthrough. It is separate from the local Node/SQLite API and does not provide a hosted shared yacht-management service, real client accounts, or iPhone/Android store distribution.
 
 ## Choose a role
 
-Use the demonstration account choices on the sign-in screen. If entering credentials manually, every supplied account uses `DemoHarbor!26`:
+Choose a demo role on the sign-in screen; no sign-up is required. If entering credentials manually, every supplied account uses `DemoHarbor!26`:
 
 | Role | Demo email | Useful perspective |
 | --- | --- | --- |
@@ -39,6 +39,8 @@ The most useful questions are: Could you confidently choose your next action? Wh
 
 ## What this preview cannot establish
 
-Browser review does not establish native keyboard/permissions/file-sharing behavior, push delivery, live monitoring, emergency response, production onboarding, shared cross-device persistence, backups, signed binaries, or store approval. The final [review record](REVIEW.md) distinguishes what was tested from what remains outstanding; [production requirements](PRODUCTION.md) describe the operational release work.
+This feedback preview has passed its browser review. That review does not establish Safari behavior on a physical iPhone, Android device behavior, native keyboard/permissions/file sharing, full VoiceOver/TalkBack or zoom behavior, browser download completion, push delivery, live monitoring, emergency response, production onboarding, shared cross-device persistence, backups, signed binaries, or store approval. These remain native/production acceptance items, not blockers to using this preview for fictional-data feedback. The [review record](REVIEW.md) distinguishes tested behavior from what remains outstanding; [production requirements](PRODUCTION.md) describe the operational release work.
 
-GitHub Pages is available for public repositories with GitHub Free and hosts static HTML/CSS/JavaScript; it does not run the Node/SQLite API. GitHub states that Pages visitor IP addresses are logged for security. See [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages). Before handoff, verify the actual public URL, confirm that edits persist and roles share the same browser-local sample data, and test reset by clearing site storage. Deployment is not complete until the preview URL and deployed source reference are recorded above.
+GitHub Pages hosts static HTML/CSS/JavaScript; it does not run the Node/SQLite API. GitHub states that Pages visitor IP addresses are logged for security. See [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages). A fresh public browser confirmed that a sample request remained after reload, switching roles in the same browser shared the sample data, and Account → Reset demo restored the role chooser and default sample state. The preview was also checked at 390 px; a separate 320 px owner/admin QA and basic desktop Workspace/Access inspection passed. Browser download completion was not observed, and the walkthrough does not establish native device behavior or production API authorization.
+
+A read-only monitor checks the public preview every six hours and reports status; it does not edit or redeploy the site.

@@ -25,11 +25,15 @@ The browser feedback preview is a static app using fictional sample data held in
 
 Current implementation checks after the preview changes: `npm test` passed **50/50** (20 server, 26 client/demo, 4 public-preview guard tests), and `npm run typecheck` passed. `npm run build:preview` produced a 619 KB static export with 14 files; the public build guard passed. October 10's all-platform export above is historical and does not verify the current source.
 
+Final live deployment for commit [`7472330`](https://github.com/grandpajackai/las-olas-client-portal/commit/747233034b8900cc23e5446040fe65a12d89e2d2) passed all-platform JavaScript export (web 619 KB; iOS and Android 1.8 MB each), tests, typecheck, export and public scan in [GitHub Actions run 38421081963](https://github.com/grandpajackai/las-olas-client-portal/actions/runs/38421081963). The deploy step and post-deploy checksums for all 14 published assets passed; local `check-live` passed against the same commit. The live URL is [https://grandpajackai.github.io/las-olas-client-portal/](https://grandpajackai.github.io/las-olas-client-portal/).
+
 An October 13 phone-browser walkthrough at **390 and 320 CSS px** covered owner Home, Requests, More, Approvals, Messages, History search and empty results, Schedule, Documents search/download trigger, and Account offline capture/synchronization. The staff draft edit/submit → administrator return with private feedback → staff resubmission → administrator publish → owner-visible report flow passed, with internal notes absent from the owner view. Request date persistence, linked estimate and visit creation, visit date/time edit/save/completion, and cancel confirmation preserving history passed. Long 57-character vessel names and invitation tokens wrapped at 320 px. Checkbox state exposed `aria-checked` true/false and native accessibility values 1/0. These are browser preview observations and do not establish production server authorization. See screenshots and full results in [REVIEW.md](REVIEW.md).
 
-The browser download-completion event was not observed; its adapter and API file content were tested separately. Public URL, fresh-session deployment, preview persistence/reset, and desktop management workflow still need verification after deployment.
+The live preview was opened in a separate fresh browser. Creating a sample request, reloading with the request retained, switching roles in the same browser, and resetting through Account restored the role chooser and default sample state. Basic desktop Workspace/Access screens were inspected at 1440 px. Screenshots and gate-by-gate results are in [REVIEW.md](REVIEW.md).
 
-Native keyboard behavior, physical-device operation, native permissions/sharing, signed builds, and store acceptance remain unverified. The public-preview browser results do not close those native checks or prove real-backend authorization.
+The browser download-completion event was not observed; its adapter and API file content were tested separately.
+
+Native keyboard behavior, physical-device operation, native permissions/sharing, signed builds, and store acceptance remain unverified. The public-preview browser results do not close those native checks or prove production API authorization. A read-only monitor checks the public preview every six hours and reports status; it does not modify or redeploy it.
 
 Browser workflows verified during this run:
 
