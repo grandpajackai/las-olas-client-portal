@@ -31,7 +31,7 @@ An October 13 phone-browser walkthrough at **390 and 320 CSS px** covered owner 
 
 The live preview was opened in a separate fresh browser. Creating a sample request, reloading with the request retained, switching roles in the same browser, and resetting through Account restored the role chooser and default sample state. Basic desktop Workspace/Access screens were inspected at 1440 px. Screenshots and gate-by-gate results are in [REVIEW.md](REVIEW.md).
 
-The browser download-completion event was not observed; its adapter and API file content were tested separately. A bounded live photo-picker attempt also stalled in the browser automation before an attachment could be verified. Photo upload content, validation, scoping, and publication access pass the API/demo tests; selection and completed upload still require a manual browser/device check.
+In the in-app browser, the photo chooser selected `assets/app-icon.png`, the form showed **Uploaded**, and the request saved successfully. Its saved detail displayed **ATTACHMENTS** and a **Download app-icon.png** button ([screenshot](../qa/live-photo-attachment.png)). The browser download-completion event was not observed; its adapter and API file content were tested separately. Chrome's chooser stalled; this picker test does not verify native device permissions or file sharing.
 
 Native keyboard behavior, physical-device operation, native permissions/sharing, signed builds, and store acceptance remain unverified. The public-preview browser results do not close those native checks or prove production API authorization. A read-only monitor checks the public preview every six hours and reports status; it does not modify or redeploy it.
 
