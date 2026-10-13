@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Las Olas",
+    "slug": "las-olas-client-portal",
+    "version": "0.1.0",
+    "scheme": "lasolas",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/app-icon.png",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lasolas.demoportal",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Connect to your development computer to test the Las Olas demo portal."
+      }
+    },
+    "android": {
+      "package": "com.lasolas.demoportal",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/app-icon.png",
+        "backgroundColor": "#062f35"
+      },
+      "blockedPermissions": ["android.permission.RECORD_AUDIO"]
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/app-icon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose a photo to attach to a Las Olas service request or inspection.",
+          "cameraPermission": "Take a photo to document a Las Olas service request or inspection.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "extra": {
+      "deploymentStage": "local-demo",
+      "identifierNotice": "Demo identifiers only. Confirm business-owned bundle and package identifiers before release."
+    }
+  }
+}

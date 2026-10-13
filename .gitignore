@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+native-export/
+data/
+server/data/
+.env*
+!.env.example
+*.log
+ios/
+android/
+
+preview-dist/
+.DS_Store
